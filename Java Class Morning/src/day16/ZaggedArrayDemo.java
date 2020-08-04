@@ -27,7 +27,7 @@ public class ZaggedArrayDemo {//run time ma decide
 	System.out.println("=============");
 	for(int[] ar : arr) {
 		for(int a:ar) {
-			System.out.println(a +" ");
+			System.out.print(a +" ");
 		}
 		System.out.println();
 	}
