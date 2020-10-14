@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="p" class="com.vastika.spring_list.User">
+	<!-- <property name="address">
+	<list>
+	<ref bean="address1" />
+	<ref bean="address2" />
+	</list>
+	</property> -->
+	</bean>
+	<bean id="address1" class="com.vastika.spring_list.Address">
+		<property name="cityName" value="${city}" />
+		<property name="countryName" value="${country}" />
+	</bean>
+	
+	<bean id="address2" class="com.vastika.spring_list.Address">
+		<property name="cityName" value="Kathmandu" />
+		<property name="countryName" value="Nepal" />
+	</bean>
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="spring.properties"></property>
+	</bean>
+	<bean
+		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor">
+	</bean>
+</beans>
+
