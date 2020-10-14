@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<bean id="p" class="com.vastika.spring_config_demo2.User" autowire="byName"><!--  or we can use bytype -->
+<property name="userName" value="Bikash"/>
+<property name="mobileNo" value="99999"/>
+<property name="age" value="45"/>
+<!-- <property name="address" ref="address"/> -->
+</bean>
+ 
+<!-- <bean id="u" class="com.vastika.spring_config_demo2.Address"> -->
+<bean id="address" class= "com.vastika.spring_config_demo2.Address">
+<property name="cityName" value="Pokhara"/>
+<property name="countryName" value="Nepal"/>
+</bean>
+<alias name="p" alias="u"/>
+</beans>
+<!--  we can also replace id through name -->
